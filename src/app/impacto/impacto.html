@@ -1,0 +1,8 @@
+<h2>Meu impacto</h2>
+
+<p>Você já evitou <strong>{{ servico.totalKg() }} kg</strong> de CO₂.</p>
+
+<progress [value]="servico.totalKg()" [max]="meta"></progress>
+<p>Meta semanal: {{ meta }} kg</p>
+
+<p> Dica do dia: {{ dica }}</p>

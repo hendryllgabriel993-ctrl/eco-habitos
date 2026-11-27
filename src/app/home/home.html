@@ -1,0 +1,17 @@
+<h2>Meus hábitos sustentáveis</h2>
+
+<input [(ngModel)]="nome" placeholder="Novo hábito" />
+<input [(ngModel)]="impacto" type="number" placeholder="kg de CO₂" />
+<button (click)="adicionar()">Adicionar</button>
+
+<ul>
+  @for (h of servico.habitos(); track h.id) {
+    <app-habito-item
+      [habito]="h"
+      (alternar)="servico.alternar($event)"
+      (remover)="servico.remover($event)"
+    />
+  } @empty {
+    <p>Nenhum hábito ainda.</p>
+  }
+</ul>
